@@ -23,13 +23,16 @@ Image *reveler(Image *img){
 }
 
 void usage(){
-
+    printf("Command usage:");
+    printf("revele [inputFile] [pathOfDiscoveredImage]");
+    printf("Reveal an hidden image inside a pgm image");
 }
 
 int main(int argc, char *argv[])
 {
     if(argc<3){
         usage();
+        return 1;
     } else {
         exporterImage(reveler(importerImage(argv[1])), argv[2]);
     }

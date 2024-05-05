@@ -21,13 +21,16 @@ Image *cacher(Image *support, Image *secret){
 }
 
 void usage(){
-
+    printf("Command usage:");
+    printf("cache [inputImage] [secretImage] [pathOfFinalImage]");
+    printf("Hide an image inside another a pgm image");
 }
 
 int main(int argc, char *argv[])
 {
     if(argc<4){
         usage();
+        return 1;
     } else {
         exporterImage(cacher(importerImage(argv[1]), importerImage(argv[2])), argv[3]);
     }
