@@ -9,7 +9,7 @@ all: $(BIN)/cache $(BIN)/revele
 
 .DELETE_ON_ERROR:
 
-$(BUILD)/image.o: $(SRC)/image.c
+$(BUILD)/image.o: $(SRC)/include/image.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 $(BUILD)/cache.o: $(SRC)/cache.c
 	@$(CC) $(CFLAGS) -c -o $@ $<

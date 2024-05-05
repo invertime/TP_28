@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "image.h"
+#include "include/image.h"
 
 Image *reveler(Image *img){
     Image *secret= creerImage(img->haut/2, img->larg/2);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "image.h"
+#include "include/image.h"
 
 Image *cacher(Image *support, Image *secret){
     redim(secret, support->haut/2, support->larg/2);
