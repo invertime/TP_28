@@ -3,17 +3,18 @@
 #include "include/image.h"
 
 Image *cacher(Image *support, Image *secret){
-    redim(secret, support->haut/2, support->larg/2);
+    secret = redim(secret, (support->haut-1)/2, (support->larg-1)/2);
     Image *img= copieImage(support);
     for (int i = 0; i < secret->haut; i+=1)
     {
         for (int j = 0; j < secret->larg; j+=1)
             {
-                uint8_t secretPix = getPix(secret, i, j);
-                for (int k = 0; k < 4; k++)
-                {
-                    uint8_t mask = 0b11 << (6 - 2*k);
-                    setPix(img, i+k, j+k, (getPix(support, i+k, j+k)|0b1111110)|((secretPix&mask)>>2*k));
+                uint8_t secretPix= getPix(secret, i, j);
+                for (int k = 0; k < 2; k+=1){
+                    for(int l = 0; l < 2; l+=1){
+                        uint8_t mask = 0b11 << (6 - 2*(2*k+l));
+                        setPix(img, (2*i)+k, (2*j)+l, (getPix(img, (2*i)+k, (2*j)+l) & 0b11111100) | ((secretPix&mask)>>(6-2*(2*k+l))));
+                    }
                 }
             }
     }

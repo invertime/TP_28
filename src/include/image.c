@@ -166,13 +166,15 @@ Image *redim(Image *img, int haut, int larg)
     Image *nImg = creerImage(haut, larg);
     int largCap = larg;
     int hautCap = haut;
-    if (img->larg > img->haut)
-    {
-        hautCap = img->haut*larg/img->larg;
-    }
-    else
-    {
-        largCap = img->larg*haut/img->haut;
+    if (haut>img->haut||larg>img->larg){
+        if (img->larg > img->haut)
+        {
+            largCap = img->larg*haut/img->haut;
+        }
+        else
+        {
+            hautCap = img->haut*larg/img->larg;
+        }
     }
     for (int i = 0; i < hautCap; i += 1)
     {
