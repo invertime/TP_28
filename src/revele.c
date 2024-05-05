@@ -23,9 +23,9 @@ Image *reveler(Image *img){
 }
 
 void usage(){
-    printf("Command usage:");
-    printf("revele [inputFile] [pathOfDiscoveredImage]");
-    printf("Reveal an hidden image inside a pgm image");
+    printf("Command usage:\n");
+    printf("revele [inputFile] [pathOfDiscoveredImage]\n");
+    printf("Reveal an hidden image inside a pgm image\n");
 }
 
 int main(int argc, char *argv[])
