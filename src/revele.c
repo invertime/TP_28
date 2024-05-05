@@ -13,7 +13,7 @@ Image *reveler(Image *img){
                 {
                     for (int l = 0; l < 2; l++)
                     {
-                        pix |= (getPix(img, 2*i+k, 2*j+l) & 0b00000011)<<(6-2*(k+l));
+                        pix |= (getPix(img, 2*i+k, 2*j+l) & 0b00000011)<<(6-2*(2*k+l));
                     }
                 }
                 setPix(secret, i, j, pix);
