@@ -21,8 +21,7 @@ Image *cacher(Image *support, Image *secret){
 }
 
 void usage(){
-    printf("Command usage:\n");
-    printf("cache [inputImage] [secretImage] [pathOfFinalImage]\n");
+    printf("Usage: cache [inputImage] [secretImage] [pathOfFinalImage]\n");
     printf("Hide an image inside another a pgm image\n");
 }
 
