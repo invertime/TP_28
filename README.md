@@ -28,4 +28,4 @@ or
 
 (located in `./utils`)
 
-ConvertNG.py: convert .png files to .pgm
+`ConvertNG.py`: convert .png files to .pgm
